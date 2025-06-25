@@ -61,6 +61,7 @@ public class ProductsController
         }
     }
 
+    // error? ("")
     @PostMapping()
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public Product addProduct(@RequestBody Product product)
@@ -81,6 +82,7 @@ public class ProductsController
     {
         try
         {
+            //error?? .update
             productDao.create(product);
         }
         catch(Exception ex)
@@ -95,6 +97,7 @@ public class ProductsController
     {
         try
         {
+            // error??
             var product = productDao.getById(id);
 
             if(product == null)
