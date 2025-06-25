@@ -7,6 +7,7 @@ import org.yearup.models.Category;
 import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -17,37 +18,36 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
         super(dataSource);
     }
 
+    // get all categories
     @Override
     public List<Category> getAllCategories()
     {
-        // get all categories
-        return null;
+        List<Category> categories = new ArrayList<>();
+        try
     }
 
+    // get category by id
     @Override
     public Category getById(int categoryId)
     {
-        // get category by id
-        return null;
     }
 
+    // create a new category
     @Override
     public Category create(Category category)
     {
-        // create a new category
-        return null;
     }
 
+    // update category
     @Override
     public void update(int categoryId, Category category)
     {
-        // update category
     }
 
+    // delete category
     @Override
     public void delete(int categoryId)
     {
-        // delete category
     }
 
     private Category mapRow(ResultSet row) throws SQLException
@@ -65,5 +65,4 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
 
         return category;
     }
-
 }
