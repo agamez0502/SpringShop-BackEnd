@@ -76,14 +76,15 @@ public class ProductsController
         }
     }
 
+    // bug 2
     @PutMapping("{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public void updateProduct(@PathVariable int id, @RequestBody Product product)
     {
         try
         {
-            //error?? .update
-            productDao.create(product);
+            // changed .create to .update delete with correct parameters
+            productDao.update(id, product);
         }
         catch(Exception ex)
         {
@@ -91,18 +92,15 @@ public class ProductsController
         }
     }
 
+    // maybe bug 2?
     @DeleteMapping("{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public void deleteProduct(@PathVariable int id)
     {
         try
         {
-            // error??
-            var product = productDao.getById(id);
-
-            if(product == null)
-                throw new ResponseStatusException(HttpStatus.NOT_FOUND);
-
+            // simplified - just delete directly
+            // let dao handle if product doesn't exist
             productDao.delete(id);
         }
         catch(Exception ex)
