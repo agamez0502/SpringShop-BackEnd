@@ -9,7 +9,6 @@ import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 @Component
 public class MySqlProductDao extends MySqlDaoBase implements ProductDao
@@ -24,34 +23,28 @@ public class MySqlProductDao extends MySqlDaoBase implements ProductDao
     {
         List<Product> products = new ArrayList<>();
 
-        StringBuilder sql = new StringBuilder(
-                "SELECT * FROM products WHERE 1=1");
-        List<Object> params = new ArrayList<>();
+        String sql = "SELECT * FROM products " +
+                "WHERE (category_id = ? OR ? = -1) " +
+                "   AND (price >= ? OR ? = -1) " +
+                "   AND (price <= ? OR ? = -1) " +
+                "   AND (color = ? OR ? = '') ";
 
-        if(categoryId != null)
-        {
-            sql.append(" AND category_id = ?");
-            params.add(categoryId);
-        }
-        if(minPrice != null)
-        {
-            sql.append(" AND price >= ?");
-            params.add(minPrice);
-        }
-        if(maxPrice != null)
-        {
-            sql.append(" AND price <= ?");
-            params.add(maxPrice);
-        }
-        if(color != null && !color.isBlank())
-        {
-            sql.append(" AND color = ?");
-            params.add(color);
-        }
+        categoryId = categoryId == null ? -1 : categoryId;
+        minPrice = minPrice == null ? new BigDecimal("-1") : minPrice;
+        maxPrice = maxPrice == null ? new BigDecimal("-1") : maxPrice;
+        color = color == null ? "" : color;
 
         try (Connection connection = getConnection())
         {
-            PreparedStatement statement = connection.prepareStatement(sql.toString());
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, categoryId);
+            statement.setInt(2, categoryId);
+            statement.setBigDecimal(3, minPrice);
+            statement.setBigDecimal(4, minPrice);
+            statement.setBigDecimal(5, maxPrice);
+            statement.setBigDecimal(6, maxPrice);
+            statement.setString(7, color);
+            statement.setString(8, color);
 
             ResultSet row = statement.executeQuery();
 
@@ -63,7 +56,7 @@ public class MySqlProductDao extends MySqlDaoBase implements ProductDao
         }
         catch (SQLException e)
         {
-            throw new RuntimeException("Error searching products", e);
+            throw new RuntimeException(e);
         }
 
         return products;
