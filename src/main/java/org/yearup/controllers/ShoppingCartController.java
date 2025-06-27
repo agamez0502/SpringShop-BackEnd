@@ -55,7 +55,7 @@ public class ShoppingCartController
             // use the shoppingcartDao to get all items in the cart and return the cart
             return shoppingCartDao.getByUserId(userId);
         }
-        catch(Exception e)
+        catch(Exception ex)
         {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Oops... our bad.");
         }
@@ -78,7 +78,7 @@ public class ShoppingCartController
             // use the shoppingcartDao to add items into the cart
             shoppingCartDao.add(userId, productId);
         }
-        catch (Exception e)
+        catch(Exception ex)
         {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Oops... our bad.");
         }
@@ -102,7 +102,7 @@ public class ShoppingCartController
             // use the shoppingcartDao to update the items in the cart
             shoppingCartDao.update(userId, productId, item.getQuantity());
         }
-        catch (Exception e)
+        catch(Exception ex)
         {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Oops... our bad.");
         }
@@ -125,7 +125,7 @@ public class ShoppingCartController
             // use the shoppingcartDao to clear the items in the cart
             shoppingCartDao.clear(userId);
         }
-        catch (Exception e)
+        catch(Exception ex)
         {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Oops... our bad.");
         }
