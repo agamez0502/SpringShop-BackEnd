@@ -98,14 +98,6 @@ These are ideas for improving SpringShop in future versions — inspired by real
 
 ---
 
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
-![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-00758F?style=for-the-badge&logo=mysql&logoColor=white)
-![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
-![Made with Love](https://img.shields.io/badge/Made%20with-%F0%9F%A4%A9%20corazón-ff69b4?style=for-the-badge)
-
----
-
 ## 🧠 Reflections
 
 This capstone challenged me to apply everything I’ve learned about:
@@ -116,6 +108,14 @@ This capstone challenged me to apply everything I’ve learned about:
 - Real-world backend development
 
 It’s been so rewarding to see everything come together 💖
+
+---
+
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-00758F?style=for-the-badge&logo=mysql&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
+![Made with Love](https://img.shields.io/badge/Made%20with-%F0%9F%A4%A9%20corazón-ff69b4?style=for-the-badge)
 
 ---
 
