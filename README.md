@@ -80,16 +80,23 @@ Welcome to **SpringShop**, a full-stack e-commerce application built using **Jav
 ---
 
 ## 🖼️ Screenshots
-- 🛍️ Product listing screen
+
+### 🛍️ Product Listing Screen  
 ![Product Listing Screen](https://github.com/user-attachments/assets/56c35bcd-fbe0-44e7-8f71-1830188166fd)
-  
-- 🛒 Cart with items
+
+---
+
+### 🛒 Cart with Items  
 ![Cart with Items](https://github.com/user-attachments/assets/742ae5fa-afda-44a6-b1e0-512b731ec19d)
 
-- 👤 Profile update form
+---
+
+### 👤 Profile Update Form  
 ![Profile Update Form](https://github.com/user-attachments/assets/f303ca82-1530-49eb-940d-0141c6acc310)
 
-- 🔐 Login screen  
+---
+
+### 🔐 Login Screen  
 ![Login Screen](https://github.com/user-attachments/assets/382778f7-c06a-4a7b-ade9-39634e1a25e7)
 
 ---
