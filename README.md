@@ -102,6 +102,40 @@ These are ideas for improving SpringShop in future versions — inspired by real
 
 ---
 
+## 💖 Favorite Code Snippet
+
+This method from my `MySqlShoppingCartDao` class is one of my favorites because it captures the real-world feeling of shopping: click once, and boom — it’s in your cart 🛒✨
+
+```java
+// add items to shopping cart
+@Override
+public void add(int userId, int productId)
+{
+    // this is a "try-with-resources" block
+    // it ensures that the Connection, Statement, and ResultSet are closed automatically after we are done
+    try (Connection conn = getConnection())
+    {
+        // start prepared statement - tied to the open connection
+        PreparedStatement prepStatement = conn.prepareStatement(
+                "INSERT INTO shopping_cart (user_id, product_id, quantity) VALUES (?, ?, 1) " +
+                "ON DUPLICATE KEY UPDATE quantity = quantity + 1");
+
+        // set parameters
+        prepStatement.setInt(1, userId);
+        prepStatement.setInt(2, productId);
+
+        // execute the update to the query - adds items to cart
+        prepStatement.executeUpdate();
+
+    }
+    catch (SQLException e)
+    {
+        throw new RuntimeException(e);
+    }
+}```
+
+---
+
 ## 🧠 Reflections
 
 This capstone challenged me to apply everything I’ve learned about:
