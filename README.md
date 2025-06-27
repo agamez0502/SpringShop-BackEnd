@@ -1,5 +1,7 @@
 # 🛍️ SpringShop E-Commerce API & Frontend
 
+![SpringShop Logo](spring-shop-logo.png)
+
 Welcome to **SpringShop**, a full-stack e-commerce application built using **Java**, **Spring Boot**, **MySQL**, and a pre-configured front-end. This project demonstrates a secure and scalable backend API to power a full online store, complete with product management, shopping cart functionality, user authentication, and profile management.
 
 ---
@@ -78,6 +80,21 @@ Welcome to **SpringShop**, a full-stack e-commerce application built using **Jav
 ---
 
 ## 🖼️ Screenshots
+
+---
+
+## 🔮 Future Versions (Wishlist Features)
+
+These are ideas for improving SpringShop in future versions — inspired by real e-commerce experiences like Amazon, Etsy, and more.
+
+| Feature            | Description |
+|--------------------|-------------|
+| ⭐ **Wishlist / Favorites**  | Allow users to save favorite products for later |
+| ⭐ **Product Reviews**       | Enable star ratings and comments per product |
+| ⭐ **Admin Dashboard**       | Central UI to manage users, products, and orders |
+| ⭐ **Discount Codes**        | Support promo codes that apply cart-wide discounts |
+
+> These would require additional tables (e.g. `wishlist`, `reviews`, `discounts`) and frontend UI support.
 
 ---
 
