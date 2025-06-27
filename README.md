@@ -80,6 +80,10 @@ Welcome to **SpringShop**, a full-stack e-commerce application built using **Jav
 ---
 
 ## 🖼️ Screenshots
+- 🛍️ Product listing screen  
+- 🛒 Cart with items  
+- 👤 Profile update form  
+- 🔐 Login screen  
 
 ---
 
