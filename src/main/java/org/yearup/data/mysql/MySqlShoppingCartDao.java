@@ -61,8 +61,7 @@ public class MySqlShoppingCartDao extends MySqlDaoBase implements ShoppingCartDa
         }
         catch (SQLException e)
         {
-            // if something goes wrong (SQL error), print the stack trace to help debug
-            throw new RuntimeException("❌ Error loading cart", e);
+            throw new RuntimeException(e);
         }
         // return the cart
         return cart;
@@ -87,10 +86,10 @@ public class MySqlShoppingCartDao extends MySqlDaoBase implements ShoppingCartDa
             // execute the update to the query - adds items to cart
             prepStatement.executeUpdate();
 
-        } catch (SQLException e)
+        }
+        catch (SQLException e)
         {
-            // if something goes wrong (SQL error), print the stack trace to help debug
-            throw new RuntimeException("❌ Error adding to cart", e);
+            throw new RuntimeException(e);
         }
     }
 
@@ -115,21 +114,19 @@ public class MySqlShoppingCartDao extends MySqlDaoBase implements ShoppingCartDa
             // execute the update to the query - updates items in cart
             prepStatement.executeUpdate();
 
-        } catch (SQLException e)
+        }
+        catch (SQLException e)
         {
-            // if something goes wrong (SQL error), print the stack trace to help debug
-            throw new RuntimeException("❌ Error updating cart", e);
+            throw new RuntimeException(e);
         }
     }
 
     // clear shopping cart
     @Override
-    public void clear(int userId)
-    {
+    public void clear(int userId) {
         // this is a "try-with-resources" block
         // it ensures that the Connection, Statement, and ResultSet are closed automatically after we are done
-        try (Connection conn = getConnection())
-        {
+        try (Connection conn = getConnection()) {
             // start prepared statement - tied to the open connection
             PreparedStatement prepStatement = conn.prepareStatement(
                     "DELETE FROM shopping_cart WHERE user_id = ?");
@@ -140,10 +137,9 @@ public class MySqlShoppingCartDao extends MySqlDaoBase implements ShoppingCartDa
             // execute the update to the query - clears any items in the cart
             prepStatement.executeUpdate();
 
-        } catch (SQLException e)
-        {
-            // if something goes wrong (SQL error), print the stack trace to help debug
-            throw new RuntimeException("❌ Error clearing cart", e);
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 }

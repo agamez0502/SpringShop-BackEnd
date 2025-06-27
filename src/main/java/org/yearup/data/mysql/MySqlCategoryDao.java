@@ -45,10 +45,10 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
                 categories.add(category);
             }
 
-        } catch (SQLException e)
+        }
+        catch (SQLException e)
         {
-            // if something goes wrong (SQL error), print the stack trace to help debug
-            throw new RuntimeException("❌ Error getting all categories", e);
+            throw new RuntimeException(e);
         }
         // return the list of Categories
         return categories;
@@ -73,16 +73,17 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
             ResultSet row = prepStatement.executeQuery();
 
             // loop through each row in the ResultSet
-            if (row.next()) {
+            if (row.next())
+            {
 
                 // return the Category
                 return mapRow(row);
             }
 
-        } catch (SQLException e)
+        }
+        catch (SQLException e)
         {
-            // if something goes wrong (SQL error), print the stack trace to help debug
-            throw new RuntimeException("❌ Error getting category by ID", e);
+            throw new RuntimeException(e);
         }
         // if no category is found
         return null;
@@ -107,11 +108,13 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
             // execute the update to the query - inserts a row to the db
             int rowsAffected = prepStatement.executeUpdate();
 
-            if (rowsAffected > 0) {
+            if (rowsAffected > 0)
+            {
                 // Retrieve the generated keys
                 ResultSet generatedKeys = prepStatement.getGeneratedKeys();
 
-                if (generatedKeys.next()) {
+                if (generatedKeys.next())
+                {
                     // Retrieve the auto-incremented ID
                     int orderId = generatedKeys.getInt(1);
 
@@ -120,10 +123,10 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
                 }
             }
 
-        } catch (SQLException e)
+        }
+        catch (SQLException e)
         {
-            // if something goes wrong (SQL error), print the stack trace to help debug
-            throw new RuntimeException("❌ Error creating category", e);
+            throw new RuntimeException(e);
         }
         // if no category is found
         return null;
@@ -148,11 +151,10 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
 
             // execute the update to the query - updates a row in the db
             prepStatement.executeUpdate();
-
-        } catch (SQLException e)
+        }
+        catch (SQLException e)
         {
-            // if something goes wrong (SQL error), print the stack trace to help debug
-            throw new RuntimeException("❌ Error updating category", e);
+            throw new RuntimeException(e);
         }
     }
 
@@ -174,10 +176,10 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
             // execute the update to the query - deletes a row in the db
             prepStatement.executeUpdate();
 
-        } catch (SQLException e)
+        }
+        catch (SQLException e)
         {
-            // if something goes wrong (SQL error), print the stack trace to help debug
-            throw new RuntimeException("❌ Error deleting category", e);
+            throw new RuntimeException(e);
         }
     }
 
