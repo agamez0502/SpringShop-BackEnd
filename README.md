@@ -1,7 +1,6 @@
 # 🛍️ SpringShop E-Commerce API & Frontend
 
-![SpringShop Logo](spring-shop-logo.png)
-![spring-shop-logo png](https://github.com/user-attachments/assets/c0960f41-397c-4c68-b0c9-56c3ebcabef0)
+![spring-shop-logo png](https://github.com/user-attachments/assets/5446fb34-52c3-4980-bd3d-8113f2de555a)
 
 Welcome to **SpringShop**, a full-stack e-commerce application built using **Java**, **Spring Boot**, **MySQL**, and a pre-configured front-end. This project demonstrates a secure and scalable backend API to power a full online store, complete with product management, shopping cart functionality, user authentication, and profile management.
 
